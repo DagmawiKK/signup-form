@@ -1,5 +1,145 @@
-* {
+ *, *::after, *::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #355c17;
+
+}
+.container {
+    display: flex;
+    width: min(950px, 80%);
+    height: min(100vh, 70%);
+    border-radius: 40px;
+}
+
+.img {
+    flex: 1.5;
+    height: 100%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background: no-repeat;
+    background-image: url(./imgs/light-theme.jpg);
+    background-size:cover;
+}
+.form {
+    flex: 2.5;
+    min-width: 550px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    box-shadow: rgb(204, 219, 232) 10px 10px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+}
+.form-wrapper {
+    height: 100%;
+    margin-left: max(5px, 10%);
+    
+}
+.img {
+    min-width: 300px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    height: 100%;
+}
+h1 {
+    margin-left: 30%;
+    padding: 20px;
+}
+label {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.name-wrapper, .password-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+
+}
+input, button {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: 100%;
+    appearance: none;
+    border: none;
+    width: 90%;
+    padding: 10px;
+    margin: 5px;
+}
+
+input:focus, input:active {
+    appearance: none;
+    outline: none;
+    border: 1px solid lightgray;
+}
+
+input + span {
+    position: relative;
+}
+  
+input + span::after {
+    font-size: 0.7rem;
+    position: absolute;
+    padding: 2px 10px;
+    top: -32px;
+}
+  
+input:required + span::after {
+    color: white;
+    background-color: #1c2119;
+    content: "Required";
+    left: -70px;
+}
+
+.lname-wrapper, .confirm-password-wrapper {
+    width: 50%;
+}
+
+button {
+    background-color: #49871a;
+    color: #97ed55;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+input + span {
+    position: relative;
+  }
+  
+  input + span::before {
+    position: absolute;
+    right: -20px;
+    top: 5px;
+  }
+  
+input:not(:placeholder-shown):invalid {
+    border: 2px solid red;
+}
+
+input:not(:placeholder-shown):invalid + span::before {
+    content: "✖";
+    color: red;
+}
+
+input:valid + span::before {
+    content: "✓";
+    color: green;
+}
+
+a {
+    color: green;
 }
